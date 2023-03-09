@@ -10,6 +10,7 @@ Maintainer:    Maxence Weynans <neutaaaaan@gmail.com>
 Website:       https://github.com/vim/colorschemes
 Description:   A mostly monochrome colorscheme, with a few niceties.
 License:       Vim License (see `:help license`)`
+Neovim:        yes
 ; }}}
 
 

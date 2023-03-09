@@ -10,6 +10,7 @@ Maintainer:    Maxence Weynans <neutaaaaan@gmail.com>
 Website:       https://github.com/vim/colorschemes
 Description:   A shallow grave, a monument to the ruined age.
 License:       Vim License (see `:help license`)`
+Neovim:        yes
 ; }}}
 
 

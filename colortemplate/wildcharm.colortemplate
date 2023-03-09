@@ -5,6 +5,7 @@ Description: Vibrant and playful, at least one popular AI thinks it is.
 Author: Maxim Kim <habamax@gmail.com>
 Website: https://github.com/vim/colorschemes
 License: Same as Vim
+Neovim:        yes
 
 Background: any
 
