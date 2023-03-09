@@ -112,6 +112,8 @@ CursorColumn         none              uiblack
 CursorLine           none              uiblack
 CursorLineNr         dark7             uiblack
 DiffAdd              diffgreen         dark0             reverse
+diffAdded            dark2             none
+diffRemoved          dark1             none
 DiffChange           diffblue          dark0             reverse
 DiffDelete           diffred           dark0             reverse
 DiffText             diffpink          dark0             reverse
@@ -212,6 +214,8 @@ CursorColumn         none              none
 CursorLine           none              none
 CursorLineNr         none              none              bold
 DiffAdd              dark2             dark0             reverse
+diffAdded            dark2             none
+diffRemoved          dark1             none
 DiffChange           dark4             dark0             reverse
 DiffDelete           dark1             dark0             reverse
 DiffText             dark5             dark0             reverse
@@ -324,6 +328,8 @@ CursorColumn         none              brightwhite
 CursorLine           none              brightwhite
 CursorLineNr         light0            brightwhite
 DiffAdd              diffgreen         light0            reverse
+diffAdded            light2            none
+diffRemoved          light1            none
 DiffChange           diffblue          light0            reverse
 DiffDelete           diffred           light0            reverse
 DiffText             diffpink          light0            reverse
@@ -422,6 +428,8 @@ CursorColumn         none              none
 CursorLine           none              none
 CursorLineNr         none              none              bold
 DiffAdd              light2            light0            reverse
+diffAdded            light2            none
+diffRemoved          light1            none
 DiffChange           light4            light0            reverse
 DiffDelete           light1            light0            reverse
 DiffText             light5            light0            reverse
