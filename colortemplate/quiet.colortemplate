@@ -307,8 +307,8 @@ Color: errorred      #ff005f           197               red
 ; }}}
 
 ; Terminal colors for light variant {{{
-Term colors: light0 light1 light2 light3 light4 light5 light6 light7
-Term colors: light8 light9 light10 light11 light12 light13 light14 light15
+Term colors: light7 light1 light2 light3 light4 light5 light6 light8
+Term colors: invisigrey light9 light10 light11 light12 light13 light14 light0
 ; }}}
 
 ; Variant: gui 256 {{{
