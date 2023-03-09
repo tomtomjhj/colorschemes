@@ -63,8 +63,8 @@ Color: dark3         #d78700           172               darkyellow
 Color: dark4         #0087d7           32                darkblue
 Color: dark5         #d787d7           176               darkmagenta
 Color: dark6         #00afaf           37                darkcyan
-Color: dark7         #dadada           253               grey
-Color: dark8         #707070           242               darkgrey
+Color: dark7         #eeeeee           255               grey
+Color: dark8         #949494           246               darkgrey
 Color: dark9         #ff005f           197               red
 Color: dark10        #00d75f           41                green
 Color: dark11        #ffaf00           214               yellow
@@ -268,7 +268,7 @@ Background: light
 ; Color palette for light variant {{{
 ; Color name         GUI               Base256           Base16 (optional)
 
-Color: brightwhite   #eeeeee           255               grey
+Color: brightwhite   #ffffff           231               grey
 
 Color: light0        #000000           16                black
 Color: light1        #af0000           124               darkred
@@ -277,7 +277,7 @@ Color: light3        #af5f00           130               darkyellow
 Color: light4        #005faf           25                darkblue
 Color: light5        #870087           90                darkmagenta
 Color: light6        #008787           30                darkcyan
-Color: light7        #d7d7d7           188               grey
+Color: light7        #e4e4e4           254               grey
 Color: light8        #626262           241               darkgrey
 Color: light9        #d70000           160               red
 Color: light10       #008700           28                green
@@ -299,7 +299,7 @@ Color: uiblue        #00afff           39                blue
 Color: uipurple      #af00ff           129               darkmagenta
 Color: uiamber       #ffaf00           214               yellow
 Color: invisigrey    #a8a8a8           248               darkgrey
-Color: yasogrey      #e4e4e4           254               grey
+Color: yasogrey      #d7d7d7           188               grey
 Color: uicursearch   #ff5fff           207               magenta
 
 Color: errorred      #ff005f           197               red
