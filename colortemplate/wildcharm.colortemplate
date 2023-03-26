@@ -45,7 +45,7 @@ Color: color13                 #ff87ff        213            magenta
 Color: color06                 #00afaf        37             darkcyan
 Color: color14                 #00d7d7        44             cyan
 
-Color: color07                 #d0d0d0        252            grey
+Color: color07                 #dadada        253            grey
 Color: color15                 #ffffff        231            white
 
 Color: color16                 #875fff        99             darkred
@@ -62,7 +62,7 @@ Color: colorMP                 #ff00af        199            magenta
 
 ; Diff colors
 Color: diffAdd                 #5f875f        65             darkmagenta
-Color: diffAddFg               #afffaf        157            black
+Color: diffAddFg               #d7ffd7        194            black
 Color: diffDelete              #875f5f        95             darkred
 Color: diffDeleteFg            #ffafaf        217            black
 Color: diffChange              #5f5f5f        59             lightgray
@@ -92,7 +92,7 @@ ToolbarButton                  color00        color15
 
 QuickFixLine                   color00        color13
 CursorLineNr                   color15        none           bold
-LineNr                         colorNonT      none
+LineNr                         color08        none
 NonText                        colorNonT      none
 FoldColumn                     colorNonT      none
 SpecialKey                     colorNonT      none
@@ -201,7 +201,7 @@ DiffAdd                        diffAddFg      diffAdd
 DiffChange                     diffChangeFg   diffChange
 DiffText                       diffTextFg     diffText
 DiffDelete                     diffDeleteFg   diffDelete
-diffAdded                      color02        none
+diffAdded                      color10        none
 diffRemoved                    color01        none
 
 
@@ -369,7 +369,7 @@ ToolbarButton                  color15        color00
 
 QuickFixLine                   color15        color05
 CursorLineNr                   colorC         none           bold
-LineNr                         colorNonT      none
+LineNr                         color08        none
 NonText                        colorNonT      none
 FoldColumn                     colorNonT      none
 EndOfBuffer                    colorNonT      none
@@ -473,7 +473,7 @@ DiffChange                     diffChangeFg   diffChange
 DiffText                       diffTextFg     diffText
 DiffDelete                     diffDeleteFg   diffDelete
 diffAdded                      color02        none
-diffRemoved                    color09        none
+diffRemoved                    color01        none
 
 
 Variant: 8
