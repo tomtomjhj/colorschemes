@@ -26,6 +26,113 @@ Number                         -> String
 Boolean                        -> String
 Float                          -> String
 
+; nvim treesitter {{{
+; https://github.com/nvim-treesitter/nvim-treesitter/blob/1f087c91f5ca76a2257b855d72d371a2b5302986/CONTRIBUTING.md
+; See also :h treesitter-highlight-groups
+#if has('nvim-0.8')
+  ; misc
+  ; @comment
+  ; @comment.documentation
+  ; @error
+  ; @none
+  ; @preproc hebangs
+  ; @define
+  ; @operator
+
+  ; punctuation
+  ; @punctuation.delimiter
+  ; @punctuation.bracket
+  ; @punctuation.special
+
+  ; literals
+  ; @string
+  ; @string.documentation
+  @string.regex      -> SpecialChar
+  ; @string.escape
+  ; @string.special
+  ; @character
+  ; @character.special
+  ; @boolean
+  ; @number
+  ; @float
+
+  ; functions
+  ; @function
+  ; @function.builtin
+  ; @function.call
+  @function.macro    -> Macro
+  ; @function.latex
+  ; @method
+  ; @method.call
+  ; @constructor
+  ; @parameter
+
+  ; keywords
+  ; @keyword
+  ; @keyword.coroutine
+  ; @keyword.function
+  ; @keyword.operator
+  ; @keyword.return
+  ; @conditional
+  ; @conditional.ternary
+  ; @repeat
+  ; @debug
+  ; @label
+  ; @include
+  ; @exception
+
+  ; types
+  ; @type
+  ; @type.builtin
+  ; @type.definition
+  ; @type.qualifier
+  ; @storageclass
+  @storageclass.lifetime -> String
+  ; @attribute
+  ; @field
+  ; @property
+
+  ; identifiers
+  ; @variable
+  @variable.builtin  -> Constant
+  ; @constant
+  ; @constant.builtin
+  ; @constant.macro
+  @namespace -> Include
+  ; @symbol
+
+  ; text
+  ; @text
+  verbatim
+  hi @text.strong       ctermfg=NONE ctermbg=NONE cterm=bold guifg=NONE guibg=NONE gui=bold
+  hi @text.emphasis     ctermfg=NONE ctermbg=NONE cterm=italic guifg=NONE guibg=NONE gui=italic
+  hi @text.underline    ctermfg=NONE ctermbg=NONE cterm=underline guifg=NONE guibg=NONE gui=underline
+  hi @text.strike       ctermfg=NONE ctermbg=NONE cterm=strikethrough guifg=NONE guibg=NONE gui=strikethrough
+  endverbatim
+  ; @text.title
+  @text.literal -> String
+  @text.literal.markdown -> NONE
+  ; @text.quote
+  ; @text.uri          -> Underlined
+  ; @text.math         -> Literal
+  ; @text.environment
+  ; @text.environment.name
+  ; @text.reference    -> Underlined
+  ; @text.todo
+  @text.note         -> Todo
+  @text.warning      -> Error
+  @text.danger       -> Error
+  @text.diff.add     -> diffAdded
+  @text.diff.delete  -> diffRemoved
+
+  ; tags
+  @tag               -> Statement
+  @tag.attribute     -> Type
+  @tag.delimiter     -> Delimiter
+#endif
+; }}}
+
+
 Background: dark
 
 ;;; Color palette
@@ -209,6 +316,22 @@ DiffDelete                     diffDeleteFg   diffDelete
 diffAdded                      color10        none
 diffRemoved                    color01        none
 
+; :h lsp-lighlight
+LspReferenceText               none           none           reverse
+LspReferenceRead               none           none           reverse
+LspReferenceWrite              none           none           reverse
+LspCodeLens                    color08        none
+LspCodeLensSeparator           color08        none           bold
+
+; :h diagnostic-highlights
+DiagnosticError                color01        none
+DiagnosticWarn                 color03        none
+DiagnosticInfo                 color06        none
+DiagnosticHint                 color04        none
+DiagnosticUnderlineError       none           none           t=undercurl g=undercurl s=color01
+DiagnosticUnderlineWarn        none           none           t=undercurl g=undercurl s=color03
+DiagnosticUnderlineInfo        none           none           t=undercurl g=undercurl s=color06
+DiagnosticUnderlineHint        none           none           t=undercurl g=undercurl s=color04
 
 Variant: 8
 Normal                         color07        color00
@@ -478,6 +601,23 @@ DiffText                       diffTextFg     diffText
 DiffDelete                     diffDeleteFg   diffDelete
 diffAdded                      color02        none
 diffRemoved                    color01        none
+
+; :h lsp-lighlight
+LspReferenceText               none           none           reverse
+LspReferenceRead               none           none           reverse
+LspReferenceWrite              none           none           reverse
+LspCodeLens                    colorCm        none
+LspCodeLensSeparator           colorCm        none           bold
+
+; :h diagnostic-highlights
+DiagnosticError                color01        none
+DiagnosticWarn                 color03        none
+DiagnosticInfo                 color06        none
+DiagnosticHint                 color04        none
+DiagnosticUnderlineError       none           none           t=undercurl g=undercurl s=color01
+DiagnosticUnderlineWarn        none           none           t=undercurl g=undercurl s=color03
+DiagnosticUnderlineInfo        none           none           t=undercurl g=undercurl s=color06
+DiagnosticUnderlineHint        none           none           t=undercurl g=undercurl s=color04
 
 
 Variant: 8
