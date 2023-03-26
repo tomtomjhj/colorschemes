@@ -35,10 +35,10 @@ Color: color08                 #767676        243            darkgrey
 Color: color01                 #d7005f        161            darkred
 Color: color09                 #ff5f87        204            red
 
-Color: color02                 #00af5f        35             darkgreen
+Color: color02                 #009944        35             darkgreen
 Color: color10                 #00d75f        41             green
 
-Color: color03                 #d78700        172            darkyellow
+Color: color03                 #cc7700        172            darkyellow
 Color: color11                 #ffaf00        214            yellow
 
 Color: color04                 #0087d7        32             darkblue
@@ -138,9 +138,9 @@ MoreMsg                        color10        none
 Question                       color13        none
 WarningMsg                     color11        none
 
-Todo                           color16        color00        reverse
-Search                         color00        color10
-IncSearch                      color00        color11
+Todo                           color16        color00        reverse,bold
+Search                         color02        color15        reverse,bold,underline
+IncSearch                      color03        color15        reverse,bold,underline
 WildMenu                       color00        color11
 
 debugPC                        color04        none           reverse
@@ -250,9 +250,9 @@ MoreMsg                        color02        none
 Question                       color05        none
 WarningMsg                     color03        none
 
-Todo                           color16        color00        reverse
-Search                         color02        color00        reverse
-IncSearch                      color03        color00        reverse
+Todo                           color16        color00        reverse,bold
+Search                         color02        color00        reverse,bold,underline
+IncSearch                      color03        color00        reverse,bold,underline
 WildMenu                       color00        color03
 
 debugPC                        color04        none           reverse
@@ -308,10 +308,10 @@ Color: color01                 #af0000        124            darkred
 Color: color09                 #d70000        160            red
 
 Color: color02                 #008700        28             darkgreen
-Color: color10                 #5faf5f        71             green
+Color: color10                 #70c070        71             green
 
 Color: color03                 #af5f00        130            darkyellow
-Color: color11                 #d78700        172            yellow
+Color: color11                 #e89800        172            yellow
 
 Color: color04                 #005faf        25             darkblue
 Color: color12                 #0087d7        32             blue
@@ -325,7 +325,7 @@ Color: color14                 #00afaf        37             cyan
 Color: color07                 #8a8a8a        245            grey
 Color: color15                 #ffffff        231            white
 
-Color: color16                 #8700ff        93             darkred
+Color: color16                 #8733ff        93             darkred
 Color: colorCm                 #8a8a8a        245            darkgrey
 
 Color: colorLine               #EEEEEE        255            grey
@@ -408,9 +408,9 @@ MoreMsg                        color02        none
 Question                       color05        none
 WarningMsg                     color03        none
 
-Todo                           color16        color15        reverse
-Search                         color15        color02
-IncSearch                      color15        color11
+Todo                           color16        color15        reverse,bold
+Search                         color10        color00        reverse,bold,underline
+IncSearch                      color11        color00        reverse,bold,underline
 WildMenu                       color15        color11
 
 debugPC                        color04        none           reverse
@@ -522,9 +522,9 @@ MoreMsg                        color02        none
 Question                       color05        none
 WarningMsg                     color03        none
 
-Todo                           color16        color00        reverse
-Search                         color02        color00        reverse
-IncSearch                      color03        color00        reverse
+Todo                           color16        color00        reverse,bold
+Search                         color02        color00        reverse,bold,underline
+IncSearch                      color03        color00        reverse,bold,underline
 WildMenu                       color00        color03
 
 debugPC                        color04        none           reverse
