@@ -20,6 +20,11 @@ MessageWindow                  -> PMenu
 PopupNotification              -> Todo
 CurSearch                      -> IncSearch
 
+Title                          -> Directory
+Character                      -> String
+Number                         -> String
+Boolean                        -> String
+Float                          -> String
 
 Background: dark
 
@@ -191,7 +196,6 @@ PreProc                        color14        none
 Special                        color16        none
 Underlined                     none           none           underline
 
-Title                          none           none           bold
 Directory                      color12        none           bold
 
 Conceal                        none           none
@@ -280,7 +284,6 @@ PreProc                        color06        none
 Special                        color06        none
 Underlined                     none           none           underline
 
-Title                          none           none           bold
 Directory                      color04        none           bold
 
 Conceal                        none           none
@@ -462,7 +465,6 @@ PreProc                        color06        none
 Special                        color16        none
 Underlined                     none           none           underline
 
-Title                          none           none           bold
 Directory                      color04        none           bold
 
 Conceal                        none           none
@@ -553,7 +555,6 @@ PreProc                        color06        none
 Special                        color06        none
 Underlined                     none           none           underline
 
-Title                          none           none           bold
 Directory                      color04        none           bold
 
 Conceal                        none           none
