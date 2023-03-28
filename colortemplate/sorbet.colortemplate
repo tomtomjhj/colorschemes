@@ -21,15 +21,13 @@ StatusLineTermNC     -> StatusLineNC
 MessageWindow        -> Pmenu
 PopupNotification    -> Todo
 Boolean              -> Constant
-Character            -> Constant
+Character            -> String
 Conditional          -> Statement
 Define               -> PreProc
 Debug                -> Special
-Delimiter            -> Special
 ErrorMsg             -> Error
 Exception            -> Statement
 Float                -> Constant
-Function             -> Identifier
 Include              -> PreProc
 Keyword              -> Statement
 Label                -> Statement
@@ -40,14 +38,120 @@ PreCondit            -> PreProc
 Repeat               -> Statement
 SpecialChar          -> Special
 SpecialComment       -> Special
-StorageClass         -> Type
-Structure            -> Type
+StorageClass         -> Statement
+Structure            -> Statement
 Tag                  -> Special
-Typedef              -> Type
+Typedef              -> Statment
 ; See `:help lCursor`
 lCursor              -> Cursor
 ; Custom
 debugPC              -> CursorLine
+
+; nvim treesitter {{{
+; https://github.com/nvim-treesitter/nvim-treesitter/blob/1f087c91f5ca76a2257b855d72d371a2b5302986/CONTRIBUTING.md
+; See also :h treesitter-highlight-groups
+#if has('nvim-0.8')
+  ; misc
+  ; @comment
+  ; @comment.documentation
+  ; @error
+  ; @none
+  ; @preproc hebangs
+  ; @define
+  ; @operator
+
+  ; punctuation
+  ; @punctuation.delimiter
+  ; @punctuation.bracket
+  ; @punctuation.special
+
+  ; literals
+  ; @string
+  ; @string.documentation
+  @string.regex      -> SpecialChar
+  ; @string.escape
+  ; @string.special
+  ; @character
+  ; @character.special
+  ; @boolean
+  ; @number
+  ; @float
+
+  ; functions
+  ; @function
+  @function.builtin  -> Constant
+  ; @function.call
+  @function.macro    -> Macro
+  ; @function.latex
+  ; @method
+  ; @method.call
+  @constructor       -> Constant
+  ; @parameter
+
+  ; keywords
+  ; @keyword
+  ; @keyword.coroutine
+  ; @keyword.function
+  ; @keyword.operator
+  ; @keyword.return
+  ; @conditional
+  ; @conditional.ternary
+  ; @repeat
+  ; @debug
+  ; @label
+  ; @include
+  ; @exception
+
+  ; types
+  ; @type
+  ; @type.builtin
+  ; @type.definition
+  ; @type.qualifier
+  ; @storageclass
+  @storageclass.lifetime -> String
+  ; @attribute
+  ; @field
+  ; @property
+
+  ; identifiers
+  ; @variable
+  @variable.builtin  -> Constant
+  ; @constant
+  ; @constant.builtin
+  ; @constant.macro
+  @namespace -> Include
+  ; @symbol
+
+  ; text
+  ; @text
+  verbatim
+  hi @text.strong       ctermfg=NONE ctermbg=NONE cterm=bold guifg=NONE guibg=NONE gui=bold
+  hi @text.emphasis     ctermfg=NONE ctermbg=NONE cterm=italic guifg=NONE guibg=NONE gui=italic
+  hi @text.underline    ctermfg=NONE ctermbg=NONE cterm=underline guifg=NONE guibg=NONE gui=underline
+  hi @text.strike       ctermfg=NONE ctermbg=NONE cterm=strikethrough guifg=NONE guibg=NONE gui=strikethrough
+  endverbatim
+  ; @text.title
+  @text.literal -> String
+  ; @text.literal.markdown -> NONE
+  ; @text.quote
+  ; @text.uri          -> Underlined
+  ; @text.math         -> Literal
+  ; @text.environment
+  ; @text.environment.name
+  ; @text.reference    -> Underlined
+  ; @text.todo
+  @text.note         -> Todo
+  @text.warning      -> Error
+  @text.danger       -> Error
+  @text.diff.add     -> diffAdded
+  @text.diff.delete  -> diffRemoved
+
+  ; tags
+  @tag               -> Statement
+  @tag.attribute     -> Type
+  @tag.delimiter     -> Delimiter
+#endif
+; }}}
 ; }}}
 
 Background: dark
@@ -74,6 +178,8 @@ Color: dark12        #87d7ff           117               blue
 Color: dark13        #d787ff           177               magenta
 Color: dark14        #5fd7d7           80                cyan
 Color: dark15        #ffffff           231               white
+
+Color: nordgreen     #a3be8c           108
 
 Color: diffred       #d7005f           161               darkred
 Color: diffgreen     #00af5f           35                darkgreen
@@ -106,7 +212,7 @@ Normal               dark7             guibg
 
 ; Group              Foreground        Background        Attributes
 ColorColumn          none              yasogrey
-Conceal              none              none
+Conceal              dark13            none
 CurSearch            uicursearch       dark0             reverse
 Cursor               none              none              reverse
 CursorColumn         none              uiblack
@@ -139,16 +245,16 @@ QuickFixLine         uicursearch       dark0             reverse
 Search               uiblue            dark0             reverse
 SignColumn           dark7             none
 SpecialKey           darkuipurple      none              bold
-SpellBad             dark1             none              t=underline g=undercurl s=dark1
-SpellCap             dark4             none              t=underline g=undercurl s=dark4
-SpellLocal           dark5             none              t=underline g=undercurl s=dark5
-SpellRare            dark6             none              t=underline g=undercurl s=dark6
+SpellBad             none              none              t=underline g=undercurl s=dark1
+SpellCap             none              none              t=underline g=undercurl s=dark4
+SpellLocal           none              none              t=underline g=undercurl s=dark5
+SpellRare            none              none              t=underline g=undercurl s=dark6
 StatusLine           dark0             statusline        bold
 StatusLineNC         statuslineNC      dark0             reverse
 TabLine              statuslineNC      dark0             reverse
 TabLineFill          dark7             none
 TabLineSel           dark0             statusline        bold
-Title                none              none
+Title                dark2             none              bold
 VertSplit            darkuipurple      none
 Visual               uiamber           dark0             reverse
 VisualNOS            none              uiblack
@@ -156,16 +262,18 @@ WarningMsg           dark7             none
 WildMenu             statusline        guibg             bold
 ; Other conventional group names (see `:help group-name`)
 Comment              dark5             none
-Constant             dark1             none
+Constant             dark6             none
 Error                errorred          dark0             reverse,bold
-Identifier           dark2             none
+Identifier           none              none
+Function             dark2             none
 Ignore               dark7             none
 PreProc              dark4             none
-Special              dark6             none
+Special              dark1             none
+Delimiter            dark12            none
 Statement            dark4             none
-String               dark3             none
+String               nordgreen         none
 Todo                 uiteal            none              reverse,bold
-Type                 dark4             none
+Type                 dark3             none
 Underlined           dark7             none              underline
 ; See `:help CursorIM`
 CursorIM             dark0             uilime
@@ -174,98 +282,24 @@ ToolbarLine          none              dark0
 ToolbarButton        dark7             dark0             bold
 
 ; Syntax overrides
-DiffRemoved          dark1             none
+diffAdded            dark2             none
+diffRemoved          dark1             none
 debugBreakpoint      statuslineNC      dark0             reverse,bold
+
+; :h lsp-lighlight
+LspReferenceText               none           none           reverse
+LspReferenceRead               none           none           reverse
+LspReferenceWrite              none           none           reverse
+LspCodeLens                    dark8        none
+LspCodeLensSeparator           dark8        none           bold
+
+; :h diagnostic-highlights
+DiagnosticError                dark1        none
+DiagnosticWarn                 dark3        none
+DiagnosticInfo                 dark6        none
+DiagnosticHint                 dark4        none
+DiagnosticUnderlineError       none           none           t=undercurl g=undercurl s=dark1
+DiagnosticUnderlineWarn        none           none           t=undercurl g=undercurl s=dark3
+DiagnosticUnderlineInfo        none           none           t=undercurl g=undercurl s=dark6
+DiagnosticUnderlineHint        none           none           t=undercurl g=undercurl s=dark4
 ; }}}
-
-Variant: 16
-CurSearch            dark13            dark0             reverse
-EndOfBuffer          dark8             none
-Folded               dark8             none
-IncSearch            dark11            dark0             reverse
-LineNr               dark8             none
-NonText              dark8             none
-PmenuSbar            dark8             none              reverse
-Search               dark14            dark0             reverse
-SpecialKey           dark8             none              bold
-StatusLineNC         dark8             none              reverse
-TabLine              dark8             none              reverse
-VertSplit            dark8             none
-Variant: 8
-CurSearch            dark5             dark0             reverse
-EndOfBuffer          none              none
-Folded               none              none
-IncSearch            dark3             dark0             reverse
-LineNr               none              none
-NonText              none              none
-PmenuSbar            none              none              reverse
-Search               dark6             dark0             reverse
-SpecialKey           none              none              bold
-StatusLineNC         none              none              bold,underline
-TabLine              none              none              bold,underline
-VertSplit            none              none
-Variant: 16 8
-Normal               none              none
-; Group              Foreground        Background        Attributes
-ColorColumn          none              none              reverse
-Conceal              none              none
-Cursor               none              none              reverse
-CursorColumn         none              none
-CursorLine           none              none
-CursorLineNr         none              none              bold
-DiffAdd              dark2             dark0             reverse
-DiffChange           dark4             dark0             reverse
-DiffDelete           dark1             dark0             reverse
-DiffText             dark5             dark0             reverse
-Directory            none              none
-FoldColumn           none              none
-MatchParen           none              none              bold,underline
-ModeMsg              none              none              bold
-MoreMsg              none              none
-Pmenu                none              none              reverse
-PmenuExtra           none              none              reverse
-PmenuKind            none              none              reverse,bold
-PmenuSel             none              none              bold
-PmenuExtraSel        none              none              bold
-PmenuKindSel         none              none              bold
-PmenuThumb           none              none
-Question             none              none              standout
-QuickFixLine         dark5             dark0             reverse
-SignColumn           none              none
-SpellBad             dark1             none              underline
-SpellCap             dark4             none              underline
-SpellLocal           dark5             none              underline
-SpellRare            dark6             none              underline
-StatusLine           none              none              bold,reverse
-TabLineFill          none              none
-TabLineSel           none              none              reverse,bold
-Title                none              none
-Visual               uiamber           dark0             reverse
-VisualNOS            none              none
-WarningMsg           none              none              standout
-WildMenu             none              none              bold
-; Other conventional group names (see `:help group-name`)
-Comment              dark5             none
-Constant             dark1             none
-Error                dark1             dark0             reverse,bold
-Identifier           dark2             none
-Ignore               none              none
-PreProc              dark4             none
-Special              dark6             none
-Statement            dark4             none
-String               dark3             none
-Todo                 dark2             dark0             reverse,bold
-Type                 dark4             none
-Underlined           none              none              underline
-; See `:help CursorIM`
-CursorIM             none              none
-; See `:help window-toolbar`
-ToolbarLine          none              none              reverse
-ToolbarButton        none              none              bold,reverse
-
-; Syntax overrides
-DiffRemoved          dark1             none
-debugBreakpoint      none              none              reverse,bold
-
-; Template for black & white terminals
-Include: _tcozero
