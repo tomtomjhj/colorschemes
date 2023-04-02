@@ -141,10 +141,10 @@ QuickFixLine         uicursearch       dark0             reverse
 Search               uiblue            dark0             reverse
 SignColumn           dark7             none
 SpecialKey           dark8             none              bold
-SpellBad             dark1             none              t=underline g=undercurl s=dark1
-SpellCap             dark4             none              t=underline g=undercurl s=dark4
-SpellLocal           dark5             none              t=underline g=undercurl s=dark5
-SpellRare            dark6             none              t=underline g=undercurl s=dark6
+SpellBad             none              none              t=undercurl g=undercurl s=dark1
+SpellCap             none              none              t=undercurl g=undercurl s=dark4
+SpellLocal           none              none              t=undercurl g=undercurl s=dark5
+SpellRare            none              none              t=undercurl g=undercurl s=dark6
 StatusLine           dark0             dark7             bold
 StatusLineNC         dark8             dark0             reverse
 TabLine              dark8             dark0             reverse
@@ -173,6 +173,19 @@ CursorIM             dark0             uilime
 ; See `:help window-toolbar`
 ToolbarLine          none              dark0
 ToolbarButton        dark7             dark0             bold
+
+; :h diagnostic-highlights
+DiagnosticError      dark1             none
+DiagnosticWarn       dark3             none
+DiagnosticInfo       dark4             none
+DiagnosticHint       dark7             none
+DiagnosticOk         dark10            none
+DiagnosticUnderlineError none          none              t=undercurl g=undercurl s=dark1
+DiagnosticUnderlineWarn  none          none              t=undercurl g=undercurl s=dark3
+DiagnosticUnderlineInfo  none          none              t=undercurl g=undercurl s=dark4
+DiagnosticUnderlineHint  none          none              t=undercurl g=undercurl s=dark7
+DiagnosticUnderlineOk    none          none              t=undercurl g=undercurl s=dark10
+
 ; }}}
 
 ; Variant: 16 8 {{{
@@ -357,10 +370,10 @@ QuickFixLine         uicursearch       light0            reverse
 Search               uiblue            light0            reverse
 SignColumn           light0            none
 SpecialKey           light8            none              bold
-SpellBad             light1            light7            t=underline g=undercurl s=light1
-SpellCap             light4            light7            t=underline g=undercurl s=light4
-SpellLocal           light5            light7            t=underline g=undercurl s=light5
-SpellRare            light6            light7            t=underline g=undercurl s=light6
+SpellBad             none              light7            t=undercurl g=undercurl s=light1
+SpellCap             none              light7            t=undercurl g=undercurl s=light4
+SpellLocal           none              light7            t=undercurl g=undercurl s=light5
+SpellRare            none              light7            t=undercurl g=undercurl s=light6
 StatusLine           brightwhite       light0            bold
 StatusLineNC         light0            invisigrey
 TabLine              light0            invisigrey
@@ -389,6 +402,18 @@ CursorIM             light0            uilime
 ; See `:help window-toolbar`
 ToolbarLine          none              light7
 ToolbarButton        light0            light7            bold
+
+; :h diagnostic-highlights
+DiagnosticError      light1             none
+DiagnosticWarn       light3             none
+DiagnosticInfo       light4             none
+DiagnosticHint       light7             none
+DiagnosticOk         light10            none
+DiagnosticUnderlineError none          none              t=undercurl g=undercurl s=light1
+DiagnosticUnderlineWarn  none          none              t=undercurl g=undercurl s=light3
+DiagnosticUnderlineInfo  none          none              t=undercurl g=undercurl s=light4
+DiagnosticUnderlineHint  none          none              t=undercurl g=undercurl s=light7
+DiagnosticUnderlineOk    none          none              t=undercurl g=undercurl s=light10
 ; }}}
 
 ; Variant: 16 8 {{{
